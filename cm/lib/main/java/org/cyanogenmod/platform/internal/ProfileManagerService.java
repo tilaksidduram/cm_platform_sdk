@@ -635,7 +635,7 @@ public class ProfileManagerService extends SystemService {
         if (doInit) {
             if (LOCAL_LOGV) Log.v(TAG, "setActiveProfile(Profile, boolean) - Running init");
             // Call profile's "doSelect"
-            mActiveProfile.doSelect(mContext, mKeyguardService);
+            mActiveProfile.doSelect(mContext);
 
             // Notify other applications of newly selected profile.
             Intent broadcast = new Intent(ProfileManager.INTENT_ACTION_PROFILE_SELECTED);

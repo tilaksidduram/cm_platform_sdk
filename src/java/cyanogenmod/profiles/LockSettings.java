@@ -20,12 +20,7 @@ import android.app.admin.DevicePolicyManager;
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.RemoteException;
-import android.os.ServiceManager;
-import android.util.Log;
 import android.view.WindowManagerPolicy;
-import android.view.WindowManagerPolicyControl;
-import com.android.internal.policy.IKeyguardService;
 import com.android.internal.policy.PolicyManager;
 import cyanogenmod.app.Profile;
 import cyanogenmod.os.Build;
@@ -42,8 +37,6 @@ import cyanogenmod.os.Build;
  * </pre>
  */
 public final class LockSettings implements Parcelable {
-
-    private static final String TAG = LockSettings.class.getSimpleName();
 
     private int mValue;
     private boolean mDirty;
@@ -108,29 +101,24 @@ public final class LockSettings implements Parcelable {
     }
 
     /** @hide */
-    public void processOverride(Context context, IKeyguardService keyguard) {
-        boolean enable;
+    public void processOverride(Context context) {
         final DevicePolicyManager devicePolicyManager =
                 (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
+        final WindowManagerPolicy policy = PolicyManager.makeNewWindowManager();
+
         if (devicePolicyManager != null && devicePolicyManager.requireSecureKeyguard()) {
-            enable = true;
-        } else {
-            switch (mValue) {
-                default:
-                case Profile.LockMode.DEFAULT:
-                case Profile.LockMode.INSECURE:
-                    enable = true;
-                    break;
-                case Profile.LockMode.DISABLE:
-                    enable = false;
-                    break;
-            }
+            policy.enableKeyguard(true);
+            return;
         }
 
-        try {
-            keyguard.setKeyguardEnabled(enable);
-        } catch (RemoteException e) {
-            Log.w(TAG, "unable to set keyguard enabled state to: " + enable, e);
+        switch (mValue) {
+            case Profile.LockMode.DEFAULT:
+            case Profile.LockMode.INSECURE:
+                policy.enableKeyguard(true);
+                break;
+            case Profile.LockMode.DISABLE:
+                policy.enableKeyguard(false);
+                break;
         }
     }
 
