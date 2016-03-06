@@ -69,7 +69,6 @@ public class QSConstants {
     public static final String TILE_RESTARTUI = "restartui";
     public static final String TILE_APP_KILL = "kill_app";
     public static final String TILE_POWER = "power_menu";
-    public static final String TILE_THEMES = "themes";
     public static final String TILE_APP_PICKER = "app_picker";
     public static final String TILE_SOUND = "sound";
 
@@ -129,7 +128,6 @@ public class QSConstants {
         STATIC_TILES_AVAILABLE.add(TILE_APPSIDEBAR);
         STATIC_TILES_AVAILABLE.add(TILE_RESTARTUI);
         STATIC_TILES_AVAILABLE.add(TILE_POWER);
-	STATIC_TILES_AVAILABLE.add(TILE_THEMES);
 	STATIC_TILES_AVAILABLE.add(TILE_APP_KILL);
         STATIC_TILES_AVAILABLE.add(TILE_APP_PICKER);
         STATIC_TILES_AVAILABLE.add(TILE_CAFFEINE);
