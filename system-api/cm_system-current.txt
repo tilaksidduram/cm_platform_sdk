@@ -219,6 +219,7 @@ package cyanogenmod.app {
     method public int describeContents();
     method public cyanogenmod.profiles.AirplaneModeSettings getAirplaneMode();
     method public cyanogenmod.profiles.BrightnessSettings getBrightness();
+    method public cyanogenmod.profiles.ConnectionSettings getConnectionSettingWithSubId(int);
     method public java.util.Collection<cyanogenmod.profiles.ConnectionSettings> getConnectionSettings();
     method public int getDozeMode();
     method public int getExpandedDesktopMode();
@@ -673,9 +674,11 @@ package cyanogenmod.profiles {
     ctor public ConnectionSettings(int, int, boolean);
     method public int describeContents();
     method public int getConnectionId();
+    method public int getSubId();
     method public int getValue();
     method public boolean isOverride();
     method public void setOverride(boolean);
+    method public void setSubId(int);
     method public void setValue(int);
     method public void writeToParcel(android.os.Parcel, int);
     field public static final int PROFILE_CONNECTION_2G3G4G = 9; // 0x9
@@ -809,7 +812,6 @@ package cyanogenmod.providers {
     field public static final java.lang.String CAMERA_LAUNCH = "camera_launch";
     field public static final java.lang.String CAMERA_SLEEP_ON_RELEASE = "camera_sleep_on_release";
     field public static final java.lang.String CAMERA_WAKE_SCREEN = "camera_wake_screen";
-    field public static final java.lang.String CONNECTED_LINE_IDENTIFICATION = "connected_line_identification";
     field public static final android.net.Uri CONTENT_URI;
     field public static final java.lang.String DIALER_OPENCNAM_ACCOUNT_SID = "dialer_opencnam_account_sid";
     field public static final java.lang.String DIALER_OPENCNAM_AUTH_TOKEN = "dialer_opencnam_auth_token";
