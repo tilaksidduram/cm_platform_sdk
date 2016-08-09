@@ -72,6 +72,7 @@ public class QSConstants {
     public static final String TILE_APP_PICKER = "app_picker";
     public static final String TILE_SOUND = "sound";
     public static final String TILE_SCREENRECORD = "screenrecord";
+    public static final String TILE_HALO = "halo";
 
     public static final String DYNAMIC_TILE_NEXT_ALARM = "next_alarm";
     public static final String DYNAMIC_TILE_IME_SELECTOR = "ime_selector";
@@ -135,6 +136,7 @@ public class QSConstants {
         STATIC_TILES_AVAILABLE.add(TILE_CAFFEINE);
         STATIC_TILES_AVAILABLE.add(TILE_SOUND);
         STATIC_TILES_AVAILABLE.add(TILE_SCREENRECORD);
+        STATIC_TILES_AVAILABLE.add(TILE_HALO);
 
         TILES_AVAILABLE.addAll(STATIC_TILES_AVAILABLE);
 
