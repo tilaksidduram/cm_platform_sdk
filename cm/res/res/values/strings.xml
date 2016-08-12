@@ -222,4 +222,13 @@
     <string name="permlab_manage_audio_sessions">manage audio session changes</string>
     <string name="permdesc_manage_audio_sessions">Allows an app to send audio stream updates.</string>
 
+    <!-- Custom booot dexopt -->
+    <string name="android_upgrading_starting_apps">Starting apps\u2026</string>
+    <string name="android_upgrading_fstrim">Optimizing storage\u2026</string>
+    <string name="android_upgrading_complete">Preparing to start\u2026</string>
+    <string name="android_upgrading_complete_details">Optimization completed.</string>
+    <string name="android_preparing_apk">Preparing %1$s\u2026</string>
+    <string name="android_preparing_apk_obscured">Preparing apps\u2026</string>
+    <string name="android_upgrading_apk">%1$d of %2$d apps</string>
+
 </resources>
